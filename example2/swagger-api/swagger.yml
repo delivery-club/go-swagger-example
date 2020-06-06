@@ -1,0 +1,78 @@
+swagger: "2.0"
+info:
+  title: Example service
+  description: Example service
+  version: 0.0.1
+host: localhost
+schemes:
+  - http
+basePath: /
+consumes:
+  - application/json
+produces:
+  - application/json
+
+paths:
+  /hello:
+    get:
+      tags:
+        - Hello
+        - World
+      summary: Example Route
+      operationId: HelloWorld
+      description: Some description
+      responses:
+        200:
+          description: successful response
+          schema:
+            $ref: '#/definitions/HelloWorld'
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
+  /hello-world:
+    get:
+      tags:
+        - Hello
+        - World
+      summary: Example Route
+      operationId: HelloWorldFull
+      description: Some description
+      responses:
+        200:
+          description: successful response
+          schema:
+            $ref: '#/definitions/HelloWorld'
+        400:
+          description: Bad request
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+  Error:
+    type: object
+    required:
+      - message
+      - code
+    description: Error message
+    properties:
+      message:
+        type: string
+      code:
+        type: integer
+
+  HelloWorld:
+    type: object
+    required:
+      - message
+    properties:
+      message:
+        type: string
