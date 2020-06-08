@@ -62,7 +62,7 @@ go run cmd/main.go
 2020/06/08 21:39:12 Serving example2 at http://[::]:8001
 ```
 
-Проверяем (порт может меняться):
+Проверяем (порт 8001 из конфига):
 ```shell script
 curl http://localhost:8001/hello-world
 "operation hello HelloWorldFull has not yet been implemented"

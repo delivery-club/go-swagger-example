@@ -33,3 +33,17 @@ func main() {
 	// handle response
 }
 ```
+
+При указании правильного тэга, можно удобно работать с версиями клиентов.
+В нашем случае корректным тэгом будет `example3/pkg/example3/v0.0.1`.
+go.mod для пользователя этого клиента будет следующий:
+```
+module github.com/delivery-club/foo
+
+go 1.13
+
+require (
+	github.com/delivery-club/go-swagger-example/example3/pkg/example3 v0.0.1
+	github.com/go-openapi/runtime v0.19.11
+)
+```
