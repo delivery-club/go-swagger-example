@@ -7,4 +7,4 @@ gen:
 		--name example1
 
 run:
-	@go run cmd/example-service-server/main.go
+	@go run cmd/example1-server/main.go
