@@ -8,7 +8,7 @@ package hello
 import (
 	"net/http"
 
-	middleware "github.com/go-openapi/runtime/middleware"
+	"github.com/go-openapi/runtime/middleware"
 )
 
 // HelloWorldHandlerFunc turns a function with the right signature into a hello world handler

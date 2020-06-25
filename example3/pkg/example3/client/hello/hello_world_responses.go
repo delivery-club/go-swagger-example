@@ -10,10 +10,9 @@ import (
 	"io"
 
 	"github.com/go-openapi/runtime"
+	"github.com/go-openapi/strfmt"
 
-	strfmt "github.com/go-openapi/strfmt"
-
-	models "github.com/delivery-club/go-swagger-example/example3/pkg/example3/models"
+	"github.com/delivery-club/go-swagger-example/example3/pkg/example3/models"
 )
 
 // HelloWorldReader is a Reader for the HelloWorld structure.

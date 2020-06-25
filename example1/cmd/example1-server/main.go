@@ -8,7 +8,7 @@ import (
 
 	"github.com/delivery-club/go-swagger-example/example1/restapi"
 	"github.com/delivery-club/go-swagger-example/example1/restapi/operations"
-	loads "github.com/go-openapi/loads"
+	"github.com/go-openapi/loads"
 	flags "github.com/jessevdk/go-flags"
 )
 
@@ -29,7 +29,6 @@ func main() {
 	parser := flags.NewParser(server, flags.Default)
 	parser.ShortDescription = "Example service"
 	parser.LongDescription = "Example service"
-
 	server.ConfigureFlags()
 	for _, optsGroup := range api.CommandLineOptionsGroups {
 		_, err := parser.AddGroup(optsGroup.ShortDescription, optsGroup.LongDescription, optsGroup.Options)

@@ -10,7 +10,7 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	models "github.com/delivery-club/go-swagger-example/example1/models"
+	"github.com/delivery-club/go-swagger-example/example1/models"
 )
 
 // HelloWorldFullOKCode is the HTTP code returned for type HelloWorldFullOK

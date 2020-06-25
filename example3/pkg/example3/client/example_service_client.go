@@ -8,8 +8,7 @@ package client
 import (
 	"github.com/go-openapi/runtime"
 	httptransport "github.com/go-openapi/runtime/client"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 
 	"github.com/delivery-club/go-swagger-example/example3/pkg/example3/client/hello"
 )
@@ -56,9 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *ExampleSer
 
 	cli := new(ExampleService)
 	cli.Transport = transport
-
 	cli.Hello = hello.New(transport, formats)
-
 	return cli
 }
 
@@ -103,7 +100,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // ExampleService is a client for example service
 type ExampleService struct {
-	Hello *hello.Client
+	Hello hello.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -111,7 +108,5 @@ type ExampleService struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *ExampleService) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-
 	c.Hello.SetTransport(transport)
-
 }

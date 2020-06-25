@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new hello API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,19 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-HelloWorld examples route
+// ClientService is the interface for Client methods
+type ClientService interface {
+	HelloWorld(params *HelloWorldParams) (*HelloWorldOK, error)
 
-Some description
+	HelloWorldFull(params *HelloWorldFullParams) (*HelloWorldFullOK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  HelloWorld examples route
+
+  Some description
 */
 func (a *Client) HelloWorld(params *HelloWorldParams) (*HelloWorldOK, error) {
 	// TODO: Validate the params before sending
@@ -63,9 +71,9 @@ func (a *Client) HelloWorld(params *HelloWorldParams) (*HelloWorldOK, error) {
 }
 
 /*
-HelloWorldFull examples route
+  HelloWorldFull examples route
 
-Some description
+  Some description
 */
 func (a *Client) HelloWorldFull(params *HelloWorldFullParams) (*HelloWorldFullOK, error) {
 	// TODO: Validate the params before sending

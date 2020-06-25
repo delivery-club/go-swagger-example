@@ -6,9 +6,9 @@ import (
 	"crypto/tls"
 	"net/http"
 
-	errors "github.com/go-openapi/errors"
-	runtime "github.com/go-openapi/runtime"
-	middleware "github.com/go-openapi/runtime/middleware"
+	"github.com/go-openapi/errors"
+	"github.com/go-openapi/runtime"
+	"github.com/go-openapi/runtime/middleware"
 
 	"github.com/delivery-club/go-swagger-example/example1/restapi/operations"
 	"github.com/delivery-club/go-swagger-example/example1/restapi/operations/hello"
@@ -44,6 +44,8 @@ func configureAPI(api *operations.Example1API) http.Handler {
 			return middleware.NotImplemented("operation hello.HelloWorldFull has not yet been implemented")
 		})
 	}
+
+	api.PreServerShutdown = func() {}
 
 	api.ServerShutdown = func() {}
 
