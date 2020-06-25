@@ -3,7 +3,7 @@
 
 Генерация клиента для http-сервиса:
 ```shell script
-swagger generate client -f ./swagger-api/swagger.yml -t ./pkg/example3
+goswagger generate client -f ./swagger-api/swagger.yml -t ./pkg/example3
 ```
 
 Пример использования:

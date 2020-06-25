@@ -3,7 +3,7 @@
 
 Для генерации кода http-сервиса нем необходимо выполнить следующую команду:
 ```shell script
-swagger generate server \
+goswagger generate server \
 		-f ./swagger-api/swagger.yml \
 		-t ./internal/generated -C ./swagger-templates/default-server.yml \
 		--template-dir ./swagger-templates/templates \

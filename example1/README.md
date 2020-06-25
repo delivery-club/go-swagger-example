@@ -83,7 +83,7 @@ definitions:
 
 Для генерации кода http-сервиса нем необходимо выполнить следующую команду:
 ```shell script
-swagger generate server \
+goswagger generate server \
     --with-context -f ./swagger-api/swagger.yml \
     --name example1
 ```
