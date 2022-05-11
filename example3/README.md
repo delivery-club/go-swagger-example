@@ -1,4 +1,4 @@
-#### Генерация слиента для http-сервиса
+#### Генерация клиента для http-сервиса
 Для примера будет использована та же swagger-спека, что и в 1м и 2м примерах ([swagger-api/swagger.yml](https://github.com/delivery-club/go-swagger-example/blob/master/example3/swagger-api/swagger.yml)).
 
 Генерация клиента для http-сервиса:
